@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vínculo Canino - Adestramento de Cães</title>
+    <!-- Link para o arquivo CSS -->
+    <link rel="stylesheet" href="estilo.css">
+    <!-- Ícones (usaremos para o menu mobile) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+
+    <!-- Cabeçalho e Navegação -->
+    <header>
+        <nav class="navbar">
+            <a href="#" class="logo">Vínculo Canino 🐾</a>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="#sobre" class="nav-link">Sobre Mim</a></li>
+                <li class="nav-item"><a href="#servicos" class="nav-link">Serviços</a></li>
+                <li class="nav-item"><a href="#agendar" class="nav-link cta-nav">Agendar Aula</a></li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Seção Inicial (Hero) -->
+        <section id="inicio" class="hero">
+            <div class="hero-content">
+                <h1>Adestramento Positivo para uma Convivência Feliz</h1>
+                <p>Construindo uma relação de confiança e respeito entre você e seu melhor amigo.</p>
+                <a href="#agendar" class="cta-button">Agende uma Avaliação</a>
+            </div>
+        </section>
+
+        <!-- Seção Sobre Mim -->
+        <section id="sobre">
+            <h2>Quem Sou Eu</h2>
+            <div class="sobre-container">
+                <img src="https://placehold.co/300x300/E8D5C4/313131?text=Sua+Foto" alt="Foto do Adestrador" class="profile-pic">
+                <p>Olá! Sou [Seu Nome], um apaixonado por cães e especialista em comportamento canino. Minha metodologia é baseada 100% no reforço positivo, criando um ambiente de aprendizado divertido e eficaz para o seu cão. Acredito que todo cão pode aprender, e meu objetivo é te dar as ferramentas para entender e se comunicar melhor com seu pet.</p>
+            </div>
+        </section>
+
+        <!-- Seção de Serviços -->
+        <section id="servicos">
+            <h2>Meus Serviços</h2>
+            <div class="servicos-container">
+                <div class="servico-card">
+                    <i class="fas fa-paw card-icon"></i>
+                    <h3>Aula Individual Personalizada</h3>
+                    <p>Foco total nos desafios específicos do seu cão. Ideal para obediência básica, socialização e comandos essenciais.</p>
+                </div>
+                <div class="servico-card">
+                    <i class="fas fa-brain card-icon"></i>
+                    <h3>Consulta Comportamental</h3>
+                    <p>Análise completa para resolver questões complexas como ansiedade de separação, reatividade ou medos.</p>
+                </div>
+                <div class="servico-card">
+                    <i class="fas fa-medal card-icon"></i>
+                    <h3>Pacote de Aulas Completo</h3>
+                    <p>Um programa contínuo de 4 ou 8 aulas para transformar o comportamento do seu cão e solidificar o aprendizado.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção de Agendamento -->
+        <section id="agendar">
+            <h2>Agende sua Aula</h2>
+            <p>Escolha o melhor dia e horário para você. É rápido, fácil e garante seu horário na minha agenda.</p>
+            
+            <!-- INÍCIO DA INTEGRAÇÃO DO CALENDLY -->
+            <!-- **IMPORTANTE**: Substitua a URL abaixo pela URL do seu evento do Calendly -->
+            <div class="calendly-inline-widget" data-url="https://calendly.com/seu-usuario/seu-evento" style="min-width:320px;height:700px;"></div>
+            <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+            <!-- FIM DA INTEGRAÇÃO DO CALENDLY -->
+
+        </section>
+    </main>
+
+    <!-- Rodapé -->
+    <footer>
+        <p>&copy; 2025 Seu Nome Adestramento - Todos os direitos reservados.</p>
+        <!-- Adicione aqui links para redes sociais, se desejar -->
+    </footer>
+
+    <!-- Link para o arquivo JavaScript -->
+    <script src="funcional.js"></script>
+</body>
+</html>

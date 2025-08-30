@@ -1,0 +1,257 @@
+/* Google Fonts para uma tipografia mais bonita */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap'); /* Importa a fonte 'Montserrat' do Google Fonts para ser usada no site. */
+
+/* Variáveis de Cores (fácil de personalizar) */
+:root { /* A pseudo-classe :root se refere ao elemento raiz do documento (o <html>). É o melhor lugar para declarar variáveis globais de CSS. */
+    --cor-principal: #3A4D39;   /* Define uma variável chamada '--cor-principal'. Facilita a troca de cores em todo o site de uma só vez. */
+    --cor-secundaria: #ECE3CE;  /* Define a variável para a cor secundária. */
+    --cor-destaque: #739072;    /* Define a variável para cores de destaque, como botões. */
+    --cor-texto: #333333;       /* Define a cor padrão para os textos. */
+    --cor-fundo: #FBF9F1;       /* Define a cor padrão para o fundo das páginas. */
+}
+
+/* Reset e Configurações Globais */
+* { /* O seletor universal (*) aplica estes estilos a TODOS os elementos da página. */
+    margin: 0;                  /* Remove todas as margens externas padrão dos elementos. */
+    padding: 0;                 /* Remove todos os preenchimentos internos padrão dos elementos. */
+    box-sizing: border-box;     /* Muda o cálculo do tamanho total do elemento para incluir padding e border, evitando quebras de layout. */
+    font-family: 'Montserrat', sans-serif; /* Define 'Montserrat' como a fonte principal para todo o site. Se não carregar, usa uma fonte 'sans-serif' padrão. */
+    scroll-behavior: smooth;    /* Faz com que a rolagem da página seja suave ao clicar em links internos (ex: <a href="#sobre">). */
+}
+
+body {
+    background-color: var(--cor-fundo); /* Aplica a cor de fundo definida na variável global ao corpo da página. */
+    color: var(--cor-texto);            /* Aplica a cor de texto definida na variável global a todos os textos. */
+}
+
+/* Cabeçalho e Navegação */
+.navbar {
+    display: flex;                      /* Ativa o layout flexbox, que alinha os itens horizontalmente por padrão. */
+    justify-content: space-between;     /* Distribui o espaço entre os itens: o logo vai para a esquerda e o menu para a direita. */
+    align-items: center;                /* Alinha os itens verticalmente ao centro. */
+    padding: 1rem 5%;                   /* Adiciona um preenchimento interno: 1rem em cima/baixo e 5% nas laterais. */
+    background-color: #fff;             /* Define a cor de fundo do cabeçalho como branco. */
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05); /* Adiciona uma sombra sutil abaixo do cabeçalho. */
+    position: sticky;                   /* Faz o cabeçalho "grudar" no topo da tela quando o usuário rola a página. */
+    top: 0;                             /* Define que o cabeçalho deve grudar na posição 0 (topo). */
+    width: 100%;                        /* Faz o cabeçalho ocupar 100% da largura da tela. */
+    z-index: 1000;                      /* Garante que o cabeçalho fique por cima de outros elementos da página. */
+}
+
+.logo {
+    font-size: 1.6rem;                  /* Define o tamanho da fonte para o logo. */
+    font-weight: 700;                   /* Deixa a fonte do logo em negrito (bold). */
+    color: var(--cor-principal);        /* Usa a cor principal definida nas variáveis para o texto do logo. */
+    text-decoration: none;              /* Remove o sublinhado padrão dos links. */
+}
+
+.nav-menu {
+    list-style: none;                   /* Remove os marcadores (bolinhas) da lista. */
+    display: flex;                      /* Alinha os itens do menu (li) horizontalmente. */
+    align-items: center;                /* Centraliza verticalmente os itens do menu. */
+    gap: 2.5rem;                        /* Cria um espaçamento de 2.5rem entre cada item do menu. */
+}
+
+.nav-link {
+    text-decoration: none;              /* Remove o sublinhado dos links do menu. */
+    color: var(--cor-texto);            /* Define a cor do texto dos links. */
+    font-weight: 600;                   /* Deixa a fonte um pouco mais forte que o normal. */
+    transition: color 0.3s ease;        /* Cria uma transição suave de 0.3 segundos para a mudança de cor. */
+}
+
+.nav-link:hover { /* Estilo aplicado quando o mouse passa por cima do link. */
+    color: var(--cor-principal);        /* Muda a cor do texto para a cor principal. */
+}
+
+.cta-nav { /* Estilo para o botão "Agendar Aula" no menu. */
+    background-color: var(--cor-principal); /* Cor de fundo do botão. */
+    color: #fff;                        /* Cor do texto do botão (branco). */
+    padding: 0.7rem 1.5rem;             /* Preenchimento interno do botão. */
+    border-radius: 50px;                /* Deixa as bordas do botão completamente arredondadas. */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Transição suave para a cor e para o efeito de levantar. */
+}
+
+.cta-nav:hover { /* Estilo do botão quando o mouse passa por cima. */
+    background-color: var(--cor-destaque); /* Muda a cor de fundo. */
+    color: #fff;                        /* Mantém a cor do texto. */
+    transform: translateY(-2px);        /* Move o botão 2 pixels para cima, criando um efeito de "levantar". */
+}
+
+.hamburger { /* Ícone do menu para telas pequenas. */
+    display: none;                      /* Esconde o ícone em telas grandes por padrão. */
+    cursor: pointer;                    /* Muda o cursor para uma "mãozinha" ao passar por cima. */
+}
+
+.bar { /* As 3 barrinhas que formam o ícone hamburger. */
+    display: block;                     /* Faz cada barra ocupar sua própria linha. */
+    width: 25px;                        /* Largura de cada barra. */
+    height: 3px;                        /* Altura de cada barra. */
+    margin: 5px auto;                   /* Espaçamento entre as barras. */
+    transition: all 0.3s ease-in-out;   /* Animação suave para todas as propriedades. */
+    background-color: var(--cor-texto); /* Cor das barras. */
+}
+
+/* Seções */
+section {
+    padding: 80px 5%;                   /* Preenchimento interno padrão para todas as seções. */
+    text-align: center;                 /* Centraliza todo o texto dentro das seções. */
+}
+
+h2 { /* Títulos de seção (ex: "Sobre Mim", "Serviços"). */
+    font-size: 2.8rem;                  /* Tamanho da fonte do título. */
+    margin-bottom: 20px;                /* Espaçamento abaixo do título. */
+    color: var(--cor-principal);        /* Cor do título. */
+}
+
+p { /* Parágrafos. */
+    line-height: 1.6;                   /* Altura da linha, melhora a legibilidade. */
+    max-width: 800px;                   /* Largura máxima do parágrafo, para não ficar muito extenso em telas grandes. */
+    margin: 0 auto 20px auto;           /* Centraliza o parágrafo na horizontal e adiciona 20px de margem abaixo. */
+}
+
+/* Seção Hero (a primeira seção, de impacto) */
+.hero {
+    background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1552053831-71594a27632d?q=80&w=1924&auto=format&fit=crop'); /* Aplica uma imagem de fundo e um gradiente escuro por cima para o texto ficar legível. */
+    background-size: cover;             /* Faz a imagem de fundo cobrir toda a área da seção. */
+    background-position: center;        /* Centraliza a imagem de fundo. */
+    min-height: 90vh;                   /* Altura mínima de 90% da altura da tela do dispositivo. */
+    display: flex;                      /* Ativa o flexbox. */
+    justify-content: center;            /* Centraliza o conteúdo na horizontal. */
+    align-items: center;                /* Centraliza o conteúdo na vertical. */
+    color: #fff;                        /* Define a cor do texto para branco, para contrastar com o fundo escuro. */
+}
+
+.hero-content h1 {
+    font-size: clamp(2.5rem, 5vw, 4rem); /* Define um tamanho de fonte responsivo: mínimo de 2.5rem, ideal de 5% da largura da tela, e máximo de 4rem. */
+    font-weight: 700;                   /* Deixa o título principal em negrito. */
+}
+
+.hero-content p {
+    font-size: 1.2rem;                  /* Tamanho da fonte do parágrafo. */
+    margin-bottom: 40px;                /* Aumenta o espaçamento abaixo do parágrafo. */
+    font-weight: 400;                   /* Peso da fonte normal. */
+}
+
+.cta-button { /* Botão principal na seção Hero. */
+    background-color: var(--cor-destaque); /* Cor de fundo do botão. */
+    color: #fff;                        /* Cor do texto do botão. */
+    padding: 15px 35px;                 /* Preenchimento interno do botão. */
+    border-radius: 50px;                /* Bordas arredondadas. */
+    text-decoration: none;              /* Remove sublinhado. */
+    font-weight: 700;                   /* Texto em negrito. */
+    font-size: 1.1rem;                  /* Tamanho da fonte. */
+    transition: all 0.3s ease;          /* Animação suave para todas as propriedades. */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2); /* Sombra para dar profundidade ao botão. */
+}
+
+.cta-button:hover {
+    background-color: var(--cor-principal); /* Muda a cor de fundo ao passar o mouse. */
+    transform: translateY(-3px);        /* Levanta o botão um pouco. */
+}
+
+/* Seção Sobre */
+.sobre-container {
+    display: flex;                      /* Ativa o flexbox para alinhar a foto e o texto. */
+    align-items: center;                /* Alinha verticalmente a foto e o texto. */
+    justify-content: center;            /* Alinha horizontalmente. */
+    gap: 40px;                          /* Espaçamento entre a foto e o texto. */
+    flex-wrap: wrap;                    /* Permite que o texto passe para baixo da foto em telas pequenas. */
+    margin-top: 40px;                   /* Espaçamento acima do container. */
+}
+.profile-pic {
+    width: 250px;                       /* Largura da foto. */
+    height: 250px;                      /* Altura da foto. */
+    border-radius: 50%;                 /* Deixa a foto redonda. */
+    object-fit: cover;                  /* Garante que a imagem cubra a área sem distorcer. */
+    border: 5px solid var(--cor-secundaria); /* Adiciona uma borda sutil na cor secundária. */
+}
+.sobre-container p {
+    text-align: left;                   /* Alinha o texto da descrição à esquerda, para melhor leitura. */
+    max-width: 600px;                   /* Largura máxima do texto. */
+}
+
+/* Seção Serviços */
+#servicos {
+    background-color: var(--cor-secundaria); /* Cor de fundo para destacar a seção de serviços. */
+}
+.servicos-container {
+    display: flex;                      /* Alinha os cards de serviço horizontalmente. */
+    justify-content: center;            /* Centraliza os cards. */
+    gap: 30px;                          /* Espaço entre os cards. */
+    margin-top: 40px;                   /* Espaço acima dos cards. */
+    flex-wrap: wrap;                    /* Permite que os cards quebrem a linha em telas menores. */
+}
+.servico-card {
+    background-color: #fff;             /* Fundo branco para os cards. */
+    padding: 40px 30px;                 /* Preenchimento interno. */
+    border-radius: 15px;                /* Bordas levemente arredondadas. */
+    box-shadow: 0 8px 25px rgba(0,0,0,0.08); /* Sombra suave para dar profundidade. */
+    width: 320px;                       /* Largura fixa para cada card. */
+    text-align: center;                 /* Centraliza o conteúdo do card. */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Animação para o efeito de levantar e da sombra. */
+}
+.servico-card:hover {
+    transform: translateY(-10px);       /* Levanta o card 10 pixels ao passar o mouse. */
+    box-shadow: 0 12px 30px rgba(0,0,0,0.12); /* Aumenta a sombra para dar mais destaque. */
+}
+.card-icon {
+    font-size: 3rem;                    /* Tamanho do ícone dentro do card. */
+    color: var(--cor-principal);        /* Cor do ícone. */
+    margin-bottom: 20px;                /* Espaço abaixo do ícone. */
+}
+.servico-card h3 {
+    font-size: 1.5rem;                  /* Tamanho do título do card. */
+    color: var(--cor-texto);            /* Cor do título. */
+    margin-bottom: 15px;                /* Espaço abaixo do título. */
+}
+.servico-card p {
+    font-size: 1rem;                    /* Tamanho da fonte da descrição no card. */
+}
+
+/* Rodapé */
+footer {
+    background-color: var(--cor-principal); /* Cor de fundo do rodapé. */
+    color: var(--cor-secundaria);       /* Cor do texto do rodapé. */
+    padding: 20px;                      /* Preenchimento interno. */
+    text-align: center;                 /* Centraliza o texto. */
+}
+
+/* Design Responsivo para Celulares */
+@media (max-width: 768px) { /* Este bloco de código SÓ será aplicado em telas com largura máxima de 768 pixels. */
+    .hamburger {
+        display: block;                 /* Mostra o ícone hamburger em telas pequenas. */
+    }
+    .hamburger.active .bar:nth-child(2) { /* Estilos para quando o menu está aberto. */
+        opacity: 0;                     /* A barra do meio some. */
+    }
+    .hamburger.active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg); /* A barra de cima desce e rotaciona, formando um 'X'. */
+    }
+    .hamburger.active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg); /* A barra de baixo sobe e rotaciona, formando um 'X'. */
+    }
+
+    .nav-menu {
+        position: fixed;                /* Posição fixa para o menu cobrir a tela. */
+        left: -100%;                    /* Começa fora da tela, à esquerda. */
+        top: 70px;                      /* Começa logo abaixo do cabeçalho. */
+        flex-direction: column;         /* Empilha os itens do menu verticalmente. */
+        background-color: #fff;         /* Fundo branco. */
+        width: 100%;                    /* Ocupa toda a largura. */
+        text-align: center;             /* Centraliza o texto dos links. */
+        transition: 0.3s;               /* Animação de entrada. */
+        gap: 0;                         /* Remove o espaçamento horizontal. */
+    }
+    .nav-menu.active {
+        left: 0;                        /* Quando ativo, o menu desliza para dentro da tela. */
+    }
+    .nav-item {
+        padding: 1.5rem 0;              /* Preenchimento para cada item do menu. */
+        border-bottom: 1px solid #f0f0f0; /* Linha separadora entre os itens. */
+        width: 100%;                    /* Ocupa toda a largura do menu. */
+    }
+    .cta-nav {
+        border-radius: 0;               /* Remove o arredondamento do botão "Agendar" no menu mobile. */
+    }
+}
+
